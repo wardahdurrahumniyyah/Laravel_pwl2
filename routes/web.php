@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,8 +22,9 @@ Route::get('/', function () {
 Route::get('/user', [UserController::class, 'index']);
 Route::get('/admin', [AdminController::class, 'index']);
 
-// Route::get('/user', [AdminController::class]);
+// Route::resource('/user', [AdminController::class]);
 
+// Route::view('/view', 'tryblade.child');
 Route::get('/view', function () {
     return view('tryblade.child');
 });
